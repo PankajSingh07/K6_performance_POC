@@ -10,7 +10,7 @@ import http from "k6/http";
     noCoonectionReuse: false,
     stages: [
       { duration: "1m", target: 50 },   //below noraml load
-      { duration: "1m30s", target: 50 },
+      { duration: "1m30s", target: 50 },  //stay ther for 90 sec with 50 users
       { duration: "1m", target: 100 },  //normal load
       { duration: "1m30s", target: 100 },
       { duration: "1m", target: 150 },  //near breaking point
@@ -24,5 +24,6 @@ import http from "k6/http";
   
   
   export default () => {
-    http.get("https://catfact.ninja/fact");
+    http.get("https://api.zippopotam.us/us/33162");
+    http.get("https://ipinfo.io/161.185.160.93/geo"); 
   };

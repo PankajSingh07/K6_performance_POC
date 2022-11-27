@@ -21,7 +21,7 @@ import http from "k6/http";
   
   
   export default () => {
-    http.get("https://catfact.ninja/fact");
+    http.get("https://dummyjson.com/carts/1");
     http.get("https://www.boredapi.com/api/activity");
     http.get("https://dog.ceo/api/breeds/image/random");
     http.get("https://api.zippopotam.us/us/33162");

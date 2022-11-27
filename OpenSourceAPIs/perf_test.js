@@ -2,7 +2,6 @@ import http from "k6/http";
 // import { sleep } from "k6";
 import { check, sleep } from 'k6';
 
-
 export let options = {
     insecureSkipTLSVerify: true,
     noCoonectionReuse: false,
@@ -16,7 +15,7 @@ export default () => {
   check(res, { 'status was 200': (r) => r.status == 200 });
   http.get("https://catfact.ninja/fact");
   sleep(1);
-  http.get("https://api.coindesk.com/v1/bpi/currentprice.json");
+  http.get("https://dummyjson.com/carts");
   http.get("https://www.boredapi.com/api/activity");
   http.get("https://dog.ceo/api/breeds/image/random");
   http.get("https://api.zippopotam.us/us/33162");

@@ -18,5 +18,5 @@ import http from "k6/http";
    
   
   export default () => {
-    http.get("https://catfact.ninja/fact");
+    http.get("https://api.zippopotam.us/us/33162");
   };

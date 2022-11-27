@@ -15,11 +15,12 @@ import http from "k6/http";
       { duration: "2m", target: 0 },  //ramp-down to 0 users
     ],
     threshold:{
-      http_req_duration: ['p(99)<100'],  //99% request must complete in less than 100ms
+      http_req_duration: ['p(95)<100'],  //95% request must complete in less than 100ms
     }
   };
   
   
   export default () => {
-    http.get("https://catfact.ninja/fact");
+    http.get("https://api.zippopotam.us/us/33162");
+    http.get("https://ipinfo.io/161.185.160.93/geo");
   };
